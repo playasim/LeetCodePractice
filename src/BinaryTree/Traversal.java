@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/*
+Some traversal in BT
+ */
 public class Traversal {
 
     List<Integer> preRes = new ArrayList<Integer>();

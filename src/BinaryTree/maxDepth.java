@@ -1,6 +1,10 @@
 package BinaryTree;
 
+/*
+maxDepth problem solution using recursive method
+ */
 public class maxDepth {
+
 
     public int maxDepth(TreeNode root) {
 

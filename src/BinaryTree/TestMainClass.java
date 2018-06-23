@@ -2,6 +2,9 @@ package BinaryTree;
 
 import java.util.List;
 
+/*
+mainly for testing
+ */
 public class TestMainClass {
 
     public static void main(String args[]) {

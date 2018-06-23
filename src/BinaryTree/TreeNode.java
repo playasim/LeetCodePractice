@@ -1,5 +1,8 @@
 package BinaryTree;
 
+/*
+Definition of TreeNode structure
+ */
 public class TreeNode {
 
     int val;
