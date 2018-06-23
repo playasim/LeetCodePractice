@@ -81,6 +81,5 @@ public class Traversal {
         }
 
         return levelRes;
-
     }
 }
