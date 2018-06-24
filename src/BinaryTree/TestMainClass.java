@@ -16,7 +16,12 @@ public class TestMainClass {
         root.right = new TreeNode(2);
         root.left.left = new TreeNode(3);
 
-        List<Integer> preorderList = traversal.afterOrder(root);
 
+        TreeNode root2 = new TreeNode(1);
+        root2.left = new TreeNode(2);
+        root2.right = new TreeNode(3);
+        root2.right.right = new TreeNode(4);
+
+        new mergeTrees().mergeTrees(root, root2);
     }
 }
