@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class validBST {
 
 
@@ -12,6 +15,7 @@ public class validBST {
       values are >= min and <= max. */
     boolean isBSTUtil(TreeNode node, int min, int max)
     {
+        List<Integer> res = new ArrayList<>();
         /* an empty tree is BST */
         if (node == null)
             return true;
@@ -26,4 +30,6 @@ public class validBST {
         return (isBSTUtil(node.left, min, node.val-1) &&
                 isBSTUtil(node.right, node.val+1, max));
     }
+
+
 }

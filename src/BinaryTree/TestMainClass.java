@@ -9,12 +9,11 @@ public class TestMainClass {
 
     public static void main(String args[]) {
 
-        Traversal traversal = new Traversal();
+        validBST valid = new validBST();
 
         TreeNode root = new TreeNode(0);
-        root.left = new TreeNode(1);
-        root.right = new TreeNode(2);
-        root.left.left = new TreeNode(3);
+        root.left = new TreeNode(0);
+
 
 
         TreeNode root2 = new TreeNode(1);
@@ -22,6 +21,7 @@ public class TestMainClass {
         root2.right = new TreeNode(3);
         root2.right.right = new TreeNode(4);
 
-        new mergeTrees().mergeTrees(root, root2);
+        valid.isValidBST(root);
+
     }
 }
