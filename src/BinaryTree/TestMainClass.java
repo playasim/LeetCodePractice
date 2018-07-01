@@ -9,10 +9,11 @@ public class TestMainClass {
 
     public static void main(String args[]) {
 
-        validBST valid = new validBST();
+        deleteNodeInBST ent = new deleteNodeInBST();
 
-        TreeNode root = new TreeNode(0);
-        root.left = new TreeNode(0);
+        TreeNode root = new TreeNode(2);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(3);
 
 
 
@@ -21,7 +22,7 @@ public class TestMainClass {
         root2.right = new TreeNode(3);
         root2.right.right = new TreeNode(4);
 
-        valid.isValidBST(root);
+        ent.deleteNode(root, 1);
 
     }
 }
