@@ -1,27 +1,39 @@
 package DP;
 
+import java.util.Arrays;
+
 /*
 leetcode 300
  */
 public class lengthOfLIS {
 
-    public int lengthOfLIS(int[] nums) {
-        int[][] dp = new int[nums.length][nums.length];
-        int res = Integer.MIN_VALUE;
+    public static int lengthOfLIS(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        if (nums ==null || nums.length == 0) {
+            return 0;
+        }
+        int[] dp = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
-                int temp = nums[j];
-                if (j == i) dp[i][j] = 1;
-                else if (nums[j] > temp) {
-                    dp[i][j] = dp[i][j - 1] + 1;
-                    temp = nums[j];
-                } else {
-                    dp[i][j] = dp[i][j - 1];
+            dp[i] = 1;
+        }
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    dp[i] = Math.max(dp[j] + 1, dp[i]);
                 }
             }
-            res = dp[i][nums.length - 1] > res ? dp[i][nums.length - 1] : res;
+            if (max < dp[i]) {
+                max = dp[i];
+            }
         }
-        return res;
+        System.out.println(Arrays.toString(dp));
+        System.out.println(max);
+        return max;
 
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1,3,6,7,9,4,10,5,6};
+        lengthOfLIS(arr);
     }
 }
