@@ -1,21 +1,22 @@
 package DP;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /*
 leetcode 300
  */
 public class lengthOfLIS {
 
-    public static int lengthOfLIS(int[] nums) {
+    public int lengthOfLIS(int[] nums) {
         int max = Integer.MIN_VALUE;
         if (nums ==null || nums.length == 0) {
             return 0;
         }
-        int[] dp = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            dp[i] = 1;
+        if (nums.length == 1) {
+            return 1;
         }
+        int[] dp = IntStream.range(0, nums.length).map(i -> 1).toArray();
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
@@ -26,14 +27,8 @@ public class lengthOfLIS {
                 max = dp[i];
             }
         }
-        System.out.println(Arrays.toString(dp));
-        System.out.println(max);
         return max;
 
     }
 
-    public static void main(String[] args) {
-        int[] arr = new int[]{1,3,6,7,9,4,10,5,6};
-        lengthOfLIS(arr);
-    }
 }
