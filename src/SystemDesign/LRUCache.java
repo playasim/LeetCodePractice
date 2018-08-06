@@ -21,7 +21,7 @@ public class LRUCache<S, S1> {
     public LRUCache(int size) {
         currentCacheSize = 0;
         this.cacheCapacity = size;
-        nodes = new Hashtable<Object, CacheNode>(size);
+        nodes = new Hashtable<>(size);
     }
 
     public Object get(S key) {
@@ -103,7 +103,7 @@ public class LRUCache<S, S1> {
     }
 
     public static void main(String[] args) {
-        LRUCache<String, String> c = new LRUCache<String, String>(3);
+        LRUCache<String, String> c = new LRUCache<>(3);
         c.put ("1", "one");                           // 1
         c.put ("2", "two");                           // 2 1
         c.put ("3", "three");                         // 3 2 1
