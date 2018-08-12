@@ -9,20 +9,11 @@ public class TestMainClass {
 
     public static void main(String args[]) {
 
-        deleteNodeInBST ent = new deleteNodeInBST();
+        String str = "abcdefgh";
 
-        TreeNode root = new TreeNode(2);
-        root.left = new TreeNode(1);
-        root.right = new TreeNode(3);
-
-
-
-        TreeNode root2 = new TreeNode(1);
-        root2.left = new TreeNode(2);
-        root2.right = new TreeNode(3);
-        root2.right.right = new TreeNode(4);
-
-        ent.deleteNode(root, 1);
+        for (int i = 0; i < str.length(); i++)
+            for (int j = 0; j < i; j++)
+                System.out.println(str.substring(j, i));
 
     }
 }
